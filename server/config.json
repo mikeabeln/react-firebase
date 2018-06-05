@@ -1,0 +1,6 @@
+{
+"mongoUri": "string",
+"accessKeyId": "YOUR_PUBLIC_KEY", 
+"secretAccessKey": "YOUR_PRIVATE_KEY", 
+"region": "us-east-1"
+}
