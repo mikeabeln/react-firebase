@@ -30,8 +30,11 @@ module.exports = {
          	   // bundle css+scss files to one extracted css file for production
              test: /\.(css|scss)$/,
              use: ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: [{loader: 'css-loader'}, {loader: 'sass-loader'}]
+                use: [
+                  {loader: 'style-loader'}, 
+                  {loader: 'css-loader', options:{sourceMap: true}}, 
+                  {loader: 'sass-loader', options:{sourceMap: true}}
+                ]
             }),
           },
           {
