@@ -6,17 +6,19 @@
 }
 
 $red-color: #422295;
+$gray-50: #FAFAFA;
+$gray-100: #EEEEF0;
 
 .hello{
 	font-family: 'Gotham';
-	color: $red-color;
+	color: $gray-50;
 	background: url('./images/cursor.png');
 }
 
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
 /*  margin: 20px;
-*/  background-color: $red-color;
+*/  background-color: $gray-50;
 }
 
 ol, ul {
@@ -49,7 +51,7 @@ ol, ul {
 }
 
 .square:hover{
-	background-color: red;
+	background-color: $gray-100;
 }
 
 .square:focus {

@@ -9,17 +9,15 @@ const express = require('express'),
 
      passport = require('passport'),
       session = require('express-session'),
-      mongoose = require('mongoose'),
+     mongoose = require('mongoose'),
    MongoStore = require('connect-mongo')(session),
  initPassport = require('./server/passport/init');
 
  const mongoUri = require('./server/config').mongoUri;
  mongoose.Promise = global.Promise;
  mongoose.connect(mongoUri);
- var db = mongoose.connection;
-
-// Constants
-const PORT = process.env.APPLICATION_PORT || 8200;
+ const db = mongoose.connection;
+ db.on('error', console.error.bind(console, 'connection error:'));
 
 // App
 const app = express();
@@ -43,19 +41,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/isAlive', require('express-healthcheck')({
-  healthy: function () {
+  healthy: () => {
     return true;
   }
 }));
 
-// rewrite virtual urls to app to enable refreshing of internal pages
-// app.get('*', function (req, res) {
-//     res.sendFile(path.resolve('./dist/index.html'));
-// });
-
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-
+db.once('open', () => {
 
   const routes = require('./server/routes/index')(passport);
   initPassport(passport);
@@ -63,7 +54,7 @@ db.once('open', function() {
   app.use('/', routes);
   app.use(express.static(path.join(__dirname, '/dist')));
 
-  app.use(function (req, res, next) {
+  app.use( (req, res, next) => {
     console.log('404 error - resource not found');
     res.status(404).redirect('/');
     next();
@@ -71,6 +62,4 @@ db.once('open', function() {
 
 });
 
-app.listen(PORT, function() {
-  console.log('listening on port: ' + PORT)
-});
+module.exports = app;
