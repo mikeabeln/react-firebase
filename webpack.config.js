@@ -78,8 +78,7 @@ module.exports = {
       inject: true,
     }),
     new ExtractTextPlugin({
-      filename: 'styles/main.[hash].css',
-      allChunks: true,
+      filename: 'styles/[name].css',
       disable: process.env.NODE_ENV != 'production'
     }),
     new webpack.NamedModulesPlugin(),
