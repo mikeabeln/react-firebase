@@ -1,6 +1,6 @@
 import React from 'react'
-import {Route, IndexRoute, Redirect} from 'react-router'
-import {Router} from 'react-router-dom'
+import { Route } from 'react-router'
+import { Router } from 'react-router-dom'
 
 /* Styleguide component, this is our root element */
 import Styleguide from './views/Styleguide.jsx'
@@ -16,12 +16,12 @@ export default (props) => {
             <div>
                 <Styleguide toggleMenu={props.toggleMenu} render={props.render} menuOpen={props.menuOpen}>
 
-                    {/*Base Component and Root*/}
-                    <Route path="/" exact={true} component={IntroOverview}/>
+                    {/* Base Component and Root */}
+                    {/* <Route path='/' exact={true} component={IntroOverview}/> */}
 
-                    {/*Introduction Section*/}
-                    <Route path="/introduction/design-principles" component={IntroDesignPrinciples}/>
-    
+                    {/* Introduction Section */}
+                    <Route path='/introduction/design-principles' component={IntroDesignPrinciples}/>
+
                 </Styleguide>
             </div>
         </Router>
