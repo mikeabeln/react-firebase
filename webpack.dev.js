@@ -12,20 +12,21 @@ module.exports = merge(common, {
         progress: true,
         historyApiFallback: true,
         stats: 'errors-only',
+        useLocalIp: true,
         host: '0.0.0.0',
         port: 9000,
-        disableHostCheck: true,
-        proxy: {
-            '/': {
-                quiet: false,
-                noInfo: false,
-                logLevel: 'debug',
-                changeOrigin: true,
-                stats: { color: true },
-                toProxy: true,
-                target: 'http://localhost:9000'
-            }
-        }
+        disableHostCheck: true
+        // proxy: {
+        //     '/': {
+        //         quiet: false,
+        //         noInfo: false,
+        //         logLevel: 'debug',
+        //         changeOrigin: false,
+        //         stats: { color: true },
+        //         toProxy: true,
+        //         target: 'http://localhost:9000'
+        //     }
+        // }
     },
     watch: true,
     module: {
