@@ -14,7 +14,7 @@ class Error404 extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => this.setState({ error404: true }), 6000)
+        setTimeout(() => this.setState({ error404: true }), 5500)
         this.timerID = setInterval(() => this.tick(), 1000)
     }
 

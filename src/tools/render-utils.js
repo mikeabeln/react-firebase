@@ -10,11 +10,11 @@ import React from 'react'
    @param objs {Array<object>} - list of objects to convert to React elements
  */
 export function toKeyedList(TagName, classList, getKey, render, objs) {
-  return objs.map((o) => {
-    return (
-      <TagName className={classList} key={getKey(o)}>
-        {render(o)}
-      </TagName>
-    )
-  })
+    return objs.map((o) => {
+        return (
+            <TagName className={classList} key={getKey(o)}>
+                {render(o)}
+            </TagName>
+        )
+    })
 }
