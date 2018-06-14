@@ -1,15 +1,19 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 import './LandingPage.scss'
 
+class LandingPage extends React.Component {
 
-const LandingPage = () => {
-    return (
-        <div className='landingContainer'>
-            {/* put landing page content here */}
-            <p className='paragraph'>Landing Page</p>
-        </div>
-    )
+    render() {
+	    return (
+	        <div className='landingContainer'>
+	            {/* put landing page content here */}
+	            <p className='paragraph'>Landing Page</p>
+	            <Link to='/test'>Test</Link>
+	        </div>
+	    )
+    }
 }
 
 export default LandingPage

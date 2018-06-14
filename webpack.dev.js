@@ -9,14 +9,14 @@ module.exports = merge(common, {
     devServer: {
         contentBase: './dist',
         hot: true,
-        progress: false,
+        progress: true,
         historyApiFallback: true,
         stats: 'errors-only',
         host: '0.0.0.0',
         port: 9000,
         disableHostCheck: true,
-        proxy: [
-            {
+        proxy: {
+            '/': {
                 quiet: false,
                 noInfo: false,
                 logLevel: 'debug',
@@ -25,7 +25,7 @@ module.exports = merge(common, {
                 toProxy: true,
                 target: 'http://localhost:9000'
             }
-        ]
+        }
     },
     watch: true,
     module: {
