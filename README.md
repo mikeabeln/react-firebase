@@ -1,6 +1,6 @@
 # Webpack-React-Build
 
-A styleguide for NWEA interaction model, demonstrating components, and now NWEA sites/applications should act and work.
+A starter project for React using Webpack
 
 ## Software versions
 Node 8.9.1
