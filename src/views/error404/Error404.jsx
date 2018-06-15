@@ -13,6 +13,12 @@ class Error404 extends React.Component {
         }
     }
 
+    tick() {
+        this.setState({
+            timer: this.state.timer - 1
+        })
+    }
+
     componentDidMount() {
         setTimeout(() => this.setState({ error404: true }), 5500)
         this.timerID = setInterval(() => this.tick(), 1000)
@@ -20,12 +26,6 @@ class Error404 extends React.Component {
 
     componentWillUnmount() {
         clearInterval(this.timerID)
-    }
-
-    tick() {
-        this.setState({
-            timer: this.state.timer - 1
-        })
     }
 
     render() {

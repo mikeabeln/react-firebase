@@ -7,9 +7,9 @@
     "lint": "eslint --ignore-path .gitignore src/**.jsx",
     "predev": "yarn lint",
     "dev": "webpack-dev-server --open --hot --config webpack.dev.js",
-    "serve-dev": "yarn serve",
     "prebuild": "rimraf dist && yarn lint",
     "build": "webpack --config webpack.dist.js",
+    "preserve":"yarn build",
     "serve": "NODE_ENV=development nodemon server/bin/www --harmony",
     "prestart": "yarn build",
     "start": "NODE_ENV=production node server/bin/www --harmony"

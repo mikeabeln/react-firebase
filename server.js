@@ -44,14 +44,19 @@ app.use('/isAlive', require('express-healthcheck')({
     }
 }))
 
+app.use(express.static(path.join(__dirname, '/dist')))
+app.get('*', (req, res, next) => {
+    console.log(req.originalUrl)
+    res.sendFile(path.join(__dirname, '/dist/index.html'))
+    // res.redirect(req.originalUrl)
+    next()
+})
+
 db.once('open', () => {
 
     const routes = require('./server/routes/index')(passport)
     initPassport(passport)
-
     app.use('/', routes)
-    app.use(express.static(path.join(__dirname, '/dist')))
-
     app.use((req, res, next) => {
         console.log('404 error - resource not found')
         res.status(404).redirect('/')

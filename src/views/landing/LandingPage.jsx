@@ -9,6 +9,7 @@ class LandingPage extends React.Component {
 	            {/* put landing page content here */}
 	            <p className='paragraph'>Landing Page</p>
 	            <Link to='/test'>Test</Link>
+	            <Link to='/about'>About</Link>
 	        </div>
 	    )
     }

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom'
 /* AppContainer component, this is our root element */
 import AppContainer from './views/AppContainer.jsx'
 import LandingPage from './views/landing/LandingPage.jsx'
+import AboutPage from './views/about/AboutPage.jsx'
 import Error404 from './views/error404/Error404.jsx'
 
 /* import IntroRoutes */
@@ -20,6 +21,7 @@ export default () => {
                 <Switch>
                     {/* Base Component and Root */}
                     <Route path='/' exact component={LandingPage}/>
+                    <Route path='/about' exact component={AboutPage}/>
 
                     {/* No Matching Routes */}
                     <Route component={Error404}/>

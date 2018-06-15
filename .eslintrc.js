@@ -123,7 +123,7 @@ module.exports = {
     "no-throw-literal": 2, // restrict what can be thrown as an exception (off by default)
     "no-unused-expressions": 2, // disallow usage of expressions in statement position
     "no-void": 2, // disallow use of void operator (off by default)
-    "no-warning-comments": [0, {"terms": ["todo", "fixme"], "location": "start"}], // disallow usage of configurable warning terms in comments": 2, // e.g. TODO or FIXME (off by default)
+    "no-warning-comments": [0, {"terms": ["todo", "fixme"], "location": "start"}], // disallow usage of configurable warning terms in comments": 2, e.g. Todo or Fixme (off by default)
     "no-with": 2, // disallow use of the with statement
     "radix": 2, // require use of the second argument for parseInt() (off by default)
     "vars-on-top": 2, // requires to declare all vars on top of their containing scope (off by default)
@@ -182,7 +182,7 @@ module.exports = {
     "no-spaced-func": 1, // disallow space between function identifier and application
     "no-ternary": 0, // disallow the use of ternary operators (off by default)
     "no-trailing-spaces": 1, // disallow trailing whitespace at the end of lines
-    "no-underscore-dangle": 1, // disallow dangling underscores in identifiers
+    "no-underscore-dangle": 0, // disallow dangling underscores in identifiers
     "one-var": [1, "never"], // allow just one var statement per function (off by default)
     "operator-assignment": [1, "never"], // require assignment operator shorthand where possible or prohibit it entirely (off by default)
     "padded-blocks": [0, "never"], // enforce padding within blocks (off by default)

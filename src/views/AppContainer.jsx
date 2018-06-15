@@ -9,6 +9,7 @@ const AppContainer = ({ children }) => {
             <main className='main'>
                 {children}
             </main>
+        	{/* put footer component here */}
         </div>
     )
 }
