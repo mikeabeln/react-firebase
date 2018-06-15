@@ -30,8 +30,7 @@ const isAlreadyLoggedIn = function (req, res, next) {
 module.exports = function (passport) {
 
     router.get('/api/about', function (req, res) {
-        console.log('about page hit')
-        res.json({ success: 'success biatch' })
+        res.json({ success: 'success' })
     })
 
     router.get('/logout', function (req, res) {

@@ -17,19 +17,16 @@ export default () => {
     return (
         <Router>
             <AppContainer>
-
                 <Switch>
-                    {/* Base Component and Root */}
+                    {/* Base Component */}
                     <Route path='/' exact component={LandingPage}/>
+
+                    {/* Views Routes */}
                     <Route path='/about' exact component={AboutPage}/>
 
                     {/* No Matching Routes */}
                     <Route component={Error404}/>
-
-                    {/* Introduction Section */}
-                    {/* <Route path='/introduction/design-principles' component={IntroDesignPrinciples}/> */}
                 </Switch>
-
             </AppContainer>
         </Router>
     )
