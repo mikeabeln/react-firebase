@@ -1,4 +1,3 @@
-const path = require('path')
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
@@ -33,30 +32,26 @@ module.exports = function (passport) {
         res.json({ success: 'success' })
     })
 
-    router.get('/logout', function (req, res) {
+    router.get('/api/logout', function (req, res) {
         req.logout()
         res.status(200).end()
     })
 
-    router.post('/user-signup', passport.authenticate('signup'), function (req, res) {
+    router.post('/api/user-signup', passport.authenticate('signup'), function (req, res) {
         res.json(req.user._id)
     })
 
-    router.post('/buyer-signup', passport.authenticate('signup'), function (req, res) {
-        res.json(req.user._id)
-    })
-
-    router.post('/login', isAlreadyLoggedIn, passport.authenticate('login'), function (req, res) {
+    router.post('/api/login', isAlreadyLoggedIn, passport.authenticate('login'), function (req, res) {
         res.json(req.user)
     })
 
-    router.get('/userCheck', isRecognized, function (req, res) {
+    router.get('/api/userCheck', isRecognized, function (req, res) {
         res.json({
             user: req.user
         })
     })
 
-    router.get('/dash/:userId', isAuthenticated, function (req, res) {
+    router.get('/api/dash/:userId', isAuthenticated, function (req, res) {
 
         // make sure user is requesting their own dashboard
         if (req.params.userId.toString() === req.user._id.toString()) {
