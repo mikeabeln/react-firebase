@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 // const https = require('https')
-const app = require('../../server.js')
-const debug = require('debug')('server:server')
+const app = require('./../server.js')
+// const debug = require('debug')('server:server')
 const http = require('http')
 
 // https.createServer({

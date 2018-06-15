@@ -8,8 +8,8 @@ const passport = require('passport')
 const session = require('express-session')
 const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo')(session)
-const initPassport = require('./server/passport/init')
-const mongoUri = require('./server/config').mongoUri
+const initPassport = require('./passport/init')
+const mongoUri = require('./config').mongoUri
 
 mongoose.Promise = global.Promise
 mongoose.connect(mongoUri)
@@ -45,18 +45,17 @@ app.use('/isAlive', require('express-healthcheck')({
 }))
 
 app.use(express.static(path.join(__dirname, '/dist')))
-app.get('*', (req, res, next) => {
-    console.log(req.originalUrl)
-    res.sendFile(path.join(__dirname, '/dist/index.html'))
-    // res.redirect(req.originalUrl)
-    next()
-})
 
 db.once('open', () => {
 
-    const routes = require('./server/routes/index')(passport)
+    const routes = require('./routes/index')(passport)
     initPassport(passport)
     app.use('/', routes)
+
+    app.get('/*', (req, res) => {
+        res.sendFile(path.join(__dirname, '/dist/index.html'))
+    })
+
     app.use((req, res, next) => {
         console.log('404 error - resource not found')
         res.status(404).redirect('/')

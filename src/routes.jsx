@@ -1,6 +1,6 @@
 import React from 'react'
-import { Route } from 'react-router'
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
+// import { Route } from 'react-router'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 /* AppContainer component, this is our root element */
 import AppContainer from './views/AppContainer.jsx'
