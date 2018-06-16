@@ -20,9 +20,9 @@ class LandingPage extends React.Component {
 
     render() {
         return (
-            <div className='landingContainer'>
+            <div className='Landing_Container'>
                 {/* put landing page content here */}
-                <p className='aboutParagraph'>About Page</p>
+                <p className='paragraph'>About Page</p>
                 <Link to='/test'>Test</Link>
                 <Link to='/'>Landing</Link>
                 <p>{this.state.data}</p>

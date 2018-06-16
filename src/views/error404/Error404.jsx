@@ -9,7 +9,7 @@ class Error404 extends React.Component {
         super(props)
         this.state = {
             error404: false,
-            timer: 5
+            timer: 2
         }
     }
 
@@ -20,7 +20,7 @@ class Error404 extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => this.setState({ error404: true }), 5500)
+        setTimeout(() => this.setState({ error404: true }), 2500)
         this.timerID = setInterval(() => this.tick(), 1000)
     }
 

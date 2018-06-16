@@ -5,9 +5,9 @@ import './LandingPage.scss'
 class LandingPage extends React.Component {
     render() {
 	    return (
-	        <div className='landingContainer'>
+	        <div className='Landing_Container'>
 	            {/* put landing page content here */}
-	            <p className='paragraph'>Landing Page</p>
+	            <p className='Landing_Paragraph'>Landing Page</p>
 	            <Link to='/test'>Test</Link>
 	            <Link to='/about'>About</Link>
 	        </div>

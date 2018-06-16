@@ -1,5 +1,6 @@
 const path = require('path')
 const express = require('express')
+const helmet = require('helmet')
 const favicon = require('serve-favicon')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
@@ -8,8 +9,8 @@ const passport = require('passport')
 const session = require('express-session')
 const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo')(session)
-const initPassport = require('./passport/init')
-const mongoUri = require('./config').mongoUri
+const initPassport = require('./server/passport/init')
+const mongoUri = require('./server/config').mongoUri
 
 mongoose.Promise = global.Promise
 mongoose.connect(mongoUri)
@@ -19,8 +20,9 @@ db.on('error', console.error.bind(console, 'connection error:'))
 
 // App
 const app = express()
-app.disable('x-powered-by')
+app.use(helmet())
 
+// app.use(express.static(path.join(__dirname, 'dist')));
 app.use(favicon(path.join(__dirname, 'dist', 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
@@ -44,22 +46,19 @@ app.use('/isAlive', require('express-healthcheck')({
     }
 }))
 
-// serve up index.html
 app.use(express.static(path.join(__dirname, '/dist')))
 
 db.once('open', () => {
 
-    // import and assign api routes
-    const routes = require('./routes/index')(passport)
+    const routes = require('./server/routes/index')(passport)
     initPassport(passport)
     app.use('/', routes)
 
-    // catch all after routes - powers deeplinking & refresh
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '/dist/index.html'))
-    })
-
-    // error handling
+    app.get('*', (req, res, next) => {
+	    res.sendFile(path.join(__dirname, '/dist/index.html'))
+	    next()
+	})
+    
     app.use((req, res, next) => {
         console.log('404 error - resource not found')
         res.status(404).redirect('/')
