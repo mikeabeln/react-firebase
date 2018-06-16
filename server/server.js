@@ -1,5 +1,6 @@
 const path = require('path')
 const express = require('express')
+const helmet = require('helmet')
 const favicon = require('serve-favicon')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
@@ -19,7 +20,7 @@ db.on('error', console.error.bind(console, 'connection error:'))
 
 // App
 const app = express()
-app.disable('x-powered-by')
+app.use(helmet())
 
 app.use(favicon(path.join(__dirname, 'dist', 'favicon.ico')))
 app.use(logger('dev'))

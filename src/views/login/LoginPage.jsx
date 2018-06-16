@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
-import './AboutPage.scss'
+// import axios from 'axios'
+import './LoginPage.scss'
 
-class AboutPage extends React.Component {
+class LoginPage extends React.Component {
 
     constructor(props) {
         super(props)
@@ -13,22 +13,21 @@ class AboutPage extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/api/about').then((response) => {
-            this.setState({ data: response.data.success })
-        })
+        // axios.get('/api/about').then((response) => {
+        //     this.setState({ data: response.data.success })
+        // })
     }
 
     render() {
         return (
             <div className='Landing_Container'>
                 {/* put landing page content here */}
-                <p className='paragraph'>About Page</p>
-                <Link to='/test'>Test</Link>
+                <p className='paragraph'>Login Page</p>
                 <Link to='/'>Landing</Link>
-                <p>{this.state.data}</p>
+                <Link to='/signup'>Sign Up</Link>
             </div>
         )
     }
 }
 
-export default AboutPage
+export default LoginPage
