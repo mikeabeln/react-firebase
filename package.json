@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore src/**.jsx",
+    "lint": "eslint --ignore-path .gitignore client/**.jsx",
     "predev": "yarn lint",
     "dev": "webpack-dev-server --open --hot --config webpack.dev.js",
     "prebuild": "rimraf server/dist && yarn lint",

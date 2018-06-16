@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: {
-        app: './src/index.jsx'
+        app: './client/index.jsx'
     },
     output: {
         filename: '[name].bundle.js',
@@ -15,7 +15,7 @@ module.exports = {
             {
                 // transpile + bundle react scripts
                 test: /\.(js|jsx)$/,
-                include: path.join(__dirname, 'src'),
+                include: path.join(__dirname, 'client'),
                 loader: require.resolve('babel-loader'),
                 exclude: /node_modules/,
                 options: {
@@ -59,8 +59,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
-            favicon: './src/favicon.ico',
+            template: './client/index.html',
+            favicon: './client/favicon.ico',
             inject: true
         }),
         new webpack.NamedModulesPlugin(),
