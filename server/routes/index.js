@@ -20,8 +20,8 @@ const isAuthenticated = function (req, res, next) {
 
 const isAlreadyLoggedIn = function (req, res, next) {
     if (req.isAuthenticated()) {
-        console.log('User already logged in as:' + req.user.username)
-        res.status(400).send('You are already Logged in as: ' + req.user.username)
+        console.log('User already logged in as:' + req.user)
+        return res.json(req.user)
     }
     return next()
 }
@@ -37,8 +37,8 @@ module.exports = function (passport) {
         res.status(200).end()
     })
 
-    router.post('/api/user-signup', passport.authenticate('signup'), function (req, res) {
-        res.json(req.user._id)
+    router.post('/api/signup', passport.authenticate('signup'), function (req, res) {
+        res.json(req.user)
     })
 
     router.post('/api/login', isAlreadyLoggedIn, passport.authenticate('login'), function (req, res) {

@@ -22,6 +22,11 @@ db.on('error', console.error.bind(console, 'connection error:'))
 const app = express()
 app.use(helmet())
 
+app.use(function (req, res, next) {
+    res.setHeader('X-Powered-By', 'Not Your App v6.6.6')
+    next()
+})
+
 app.use(favicon(path.join(__dirname, 'dist', 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())

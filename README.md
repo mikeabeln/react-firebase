@@ -37,7 +37,7 @@ Set up a Mongo database, and grab the database's URI
 Add a config.json file in the root of the server directory with:
 ```
 {
-	"mongoUri": "YOUR_MONGO_URI",
+  "mongoUri": "YOUR_MONGO_URI",
 }
 ```
 then in your terminal:
