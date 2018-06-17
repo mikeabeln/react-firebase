@@ -39,13 +39,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use('/isAlive', require('express-healthcheck')({
-    healthy: () => {
-        return true
-    }
-}))
-
-// serve up index.html
+// serve up static assets
 app.use(express.static(path.join(__dirname, '/dist')))
 
 db.once('open', () => {
@@ -55,7 +49,7 @@ db.once('open', () => {
     initPassport(passport)
     app.use('/', routes)
 
-    // catch all after routes - powers deeplinking & refresh
+    // catch all after routes - enables deeplinking & refresh
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '/dist/index.html'))
     })

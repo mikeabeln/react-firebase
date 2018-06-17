@@ -17,7 +17,7 @@ module.exports = merge(common, {
         port: 9000,
         disableHostCheck: true,
         proxy: {
-            '/': {
+            '/api': {
                 quiet: false,
                 noInfo: false,
                 logLevel: 'debug',

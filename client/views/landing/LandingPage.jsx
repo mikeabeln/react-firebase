@@ -11,6 +11,7 @@ class LandingPage extends React.Component {
 	            <Link to='/404'>404</Link>
 	            <Link to='/about'>About</Link>
 	            <Link to='/login'>Login</Link>
+	            <Link to='/signup'>Signup</Link>
 	        </div>
 	    )
     }

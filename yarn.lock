@@ -2511,10 +2511,6 @@ expect-ct@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/expect-ct/-/expect-ct-0.1.1.tgz#de84476a2dbcb85000d5903737e9bc8a5ba7b897"
 
-express-healthcheck@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/express-healthcheck/-/express-healthcheck-0.1.0.tgz#cabec78129c4cb90cd7fb894dfae21b82e27cb07"
-
 express-session@^1.15.6:
   version "1.15.6"
   resolved "https://registry.yarnpkg.com/express-session/-/express-session-1.15.6.tgz#47b4160c88f42ab70fe8a508e31cbff76757ab0a"
