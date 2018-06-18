@@ -25,7 +25,7 @@ module.exports = merge(common, {
                 stats: { color: true },
                 toProxy: true,
                 secure: false,
-                target: 'https://0.0.0.0:3443'
+                target: 'http://0.0.0.0:3000'
             }
         }
     },
