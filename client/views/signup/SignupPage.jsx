@@ -18,12 +18,6 @@ class SignupPage extends React.Component {
         this.handleInputChange = this.handleInputChange.bind(this)
     }
 
-    componentDidMount() {
-        axios.get('/api/about').then((response) => {
-            this.setState({ data: response.data.success })
-        })
-    }
-
     handleInputChange(event) {
         const target = event.target
         const value = target.type === 'checkbox' ? target.checked : target.value
@@ -72,7 +66,6 @@ class SignupPage extends React.Component {
                     </label>
                     <input type='submit' value='Sign Up' />
                 </form>
-                <p>{this.state.data}</p>
             </div>
         )
     }

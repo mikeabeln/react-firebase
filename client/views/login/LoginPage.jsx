@@ -15,9 +15,6 @@ class LoginPage extends React.Component {
         this.handleInputChange = this.handleInputChange.bind(this)
     }
 
-    componentDidMount() {
-    }
-
     handleInputChange(event) {
         const target = event.target
         const value = target.type === 'checkbox' ? target.checked : target.value
@@ -29,7 +26,7 @@ class LoginPage extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state)
+        // console.log(this.state)
         axios.post('/api/login', this.state).then((response) => {
             console.log(response)
         })

@@ -17,14 +17,15 @@ module.exports = merge(common, {
         port: 9000,
         disableHostCheck: true,
         proxy: {
-            '/': {
+            '/api/**': {
                 quiet: false,
                 noInfo: false,
                 logLevel: 'debug',
                 changeOrigin: false,
                 stats: { color: true },
                 toProxy: true,
-                target: 'http://localhost:3000'
+                secure: false,
+                target: 'https://0.0.0.0:3443'
             }
         }
     },
