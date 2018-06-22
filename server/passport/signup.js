@@ -30,13 +30,21 @@ module.exports = function (passport) {
 
             // if they arent a user already
 
-            const newUser = new User()
+            const newUser = new User({
+                username: req.body.userName,
+                password: createHash(password),
+                email: req.body.email,
+                name: {
+                    first: req.body.firstName,
+                    last: req.body.lastName
+                }
+            })
 
-            newUser.username = req.body.userName
-            newUser.password = createHash(password)
-            newUser.email = req.body.email
-            newUser.name.first = req.body.firstName
-            newUser.name.last = req.body.lastName
+            // newUser.username = req.body.userName
+            // newUser.password = createHash(password)
+            // newUser.email = req.body.email
+            // newUser.name.first = req.body.firstName
+            // newUser.name.last = req.body.lastName
 
             return newUser.save(function (saveErr) {
                 if (err) {

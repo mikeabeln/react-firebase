@@ -38,11 +38,11 @@ module.exports = function (passport) {
     })
 
     router.post('/api/signup', passport.authenticate('signup'), function (req, res) {
-        res.json(req.user)
+        res.json(req.user.data)
     })
 
     router.post('/api/login', isAlreadyLoggedIn, passport.authenticate('login'), function (req, res) {
-        res.json(req.user)
+        res.json(req.user.data)
     })
 
     router.get('/api/userCheck', isRecognized, function (req, res) {
