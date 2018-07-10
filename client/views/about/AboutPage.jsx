@@ -13,8 +13,11 @@ class AboutPage extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/api/about').then((response) => {
-            this.setState({ data: response.data.success })
+        axios.get('/api/test/about').then((response) => {
+            console.log('requesting api/test/about', response)
+            this.setState({ data: response.data.msg })
+        }).catch((error) => {
+            console.log(error)
         })
     }
 

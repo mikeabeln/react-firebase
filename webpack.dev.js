@@ -25,7 +25,7 @@ module.exports = merge(common, {
                 stats: { color: true },
                 toProxy: true,
                 secure: false,
-                target: 'http://0.0.0.0:3000'
+                target: 'http://0.0.0.0:5000'
             }
         }
     },
@@ -35,13 +35,15 @@ module.exports = merge(common, {
             {
                 // bundle css+scss files to extracted css files for development
                 test: /\.(css|scss)$/,
-                use: ExtractTextPlugin.extract({
-                    use: [
-                        { loader: 'style-loader' },
-                        { loader: 'css-loader', options: { sourceMap: true } },
-                        { loader: 'sass-loader', options: { sourceMap: true } }
-                    ]
-                })
+                use: ExtractTextPlugin.extract(
+                    {
+                        use: [
+                            { loader: 'style-loader' },
+                            { loader: 'css-loader', options: { sourceMap: true } },
+                            { loader: 'sass-loader', options: { sourceMap: true } }
+                        ]
+                    }
+                )
             }
         ]
     },

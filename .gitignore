@@ -4,6 +4,7 @@
 node_modules/
 server/config.json
 server/.localhost-ssl/
+server/functions/node_modules/
 
 # Logs
 npm-debug.log*
