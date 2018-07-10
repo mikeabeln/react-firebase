@@ -1,51 +1,49 @@
-[debug] [2018-07-07T18:24:27.202Z] ----------------------------------------------------------------------
-[debug] [2018-07-07T18:24:27.205Z] Command:       /Users/mike/.nvm/versions/node/v6.11.5/bin/node /Users/mike/.nvm/versions/node/v6.11.5/bin/firebase serve
-[debug] [2018-07-07T18:24:27.205Z] CLI Version:   3.19.0
-[debug] [2018-07-07T18:24:27.205Z] Platform:      darwin
-[debug] [2018-07-07T18:24:27.205Z] Node Version:  v6.11.5
-[debug] [2018-07-07T18:24:27.206Z] Time:          Sat Jul 07 2018 11:24:27 GMT-0700 (PDT)
-[debug] [2018-07-07T18:24:27.206Z] ----------------------------------------------------------------------
+[debug] [2018-07-10T16:29:42.228Z] ----------------------------------------------------------------------
+[debug] [2018-07-10T16:29:42.231Z] Command:       /Users/mike.abeln/.nvm/versions/node/v8.9.1/bin/node /Users/mike.abeln/.nvm/versions/node/v8.9.1/bin/firebase serve
+[debug] [2018-07-10T16:29:42.231Z] CLI Version:   3.19.3
+[debug] [2018-07-10T16:29:42.232Z] Platform:      darwin
+[debug] [2018-07-10T16:29:42.232Z] Node Version:  v8.9.1
+[debug] [2018-07-10T16:29:42.232Z] Time:          Tue Jul 10 2018 09:29:42 GMT-0700 (PDT)
+[debug] [2018-07-10T16:29:42.232Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-07-07T18:24:27.226Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-07-07T18:24:27.226Z] > authorizing via signed-in user
-[debug] [2018-07-07T18:24:27.229Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-07-07T18:24:27.229Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/9bmbHPRRCN5BAeublOLgxcZwSTcVfhOB6VmBtUrao5s',
+[debug] [2018-07-10T16:29:42.247Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-10T16:29:42.247Z] > authorizing via signed-in user
+[debug] [2018-07-10T16:29:42.250Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-10T16:29:42.250Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/R5VK1sSCWm2CMIumkTiyXKBLp3cp9X_H2BNTsyx9aDq0_3sPAX-bh3NNJrva2yZf',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sat Jul 07 2018 11:24:27 GMT-0700 (PDT)
-[debug] [2018-07-07T18:24:27.351Z] <<< HTTP RESPONSE 200
-[debug] [2018-07-07T18:24:27.376Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/generic-specific  
+ Tue Jul 10 2018 09:29:42 GMT-0700 (PDT)
+[debug] [2018-07-10T16:29:42.387Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T16:29:42.409Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/generic-specific  
   
- Sat Jul 07 2018 11:24:27 GMT-0700 (PDT)
-[debug] [2018-07-07T18:24:27.847Z] <<< HTTP RESPONSE 200
-[debug] [2018-07-07T18:24:27.848Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/generic-specific/tokens  
+ Tue Jul 10 2018 09:29:42 GMT-0700 (PDT)
+[debug] [2018-07-10T16:29:42.837Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T16:29:42.838Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/generic-specific/tokens  
   
- Sat Jul 07 2018 11:24:27 GMT-0700 (PDT)
-[debug] [2018-07-07T18:24:28.345Z] <<< HTTP RESPONSE 200
-[debug] [2018-07-07T18:24:28.346Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/generic-specific  
+ Tue Jul 10 2018 09:29:42 GMT-0700 (PDT)
+[debug] [2018-07-10T16:29:43.476Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T16:29:43.477Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/generic-specific  
   
- Sat Jul 07 2018 11:24:28 GMT-0700 (PDT)
-[debug] [2018-07-07T18:24:28.638Z] <<< HTTP RESPONSE 200
+ Tue Jul 10 2018 09:29:43 GMT-0700 (PDT)
+[debug] [2018-07-10T16:29:43.983Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from '/Users/mike/Developer/mikeabeln/src_v4/server'...
+[info] === Serving from '/Developer/mikeabeln/src_v4/server'...
 [info] 
 [info] i  functions: Preparing to emulate functions.
-[debug] [2018-07-07T18:24:29.791Z] Fetching environment
-[debug] [2018-07-07T18:24:29.794Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/461325237357:getServerAppConfig  
+[debug] [2018-07-10T16:29:44.996Z] Fetching environment
+[debug] [2018-07-10T16:29:44.999Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/461325237357:getServerAppConfig  
   
- Sat Jul 07 2018 11:24:29 GMT-0700 (PDT)
-[debug] [2018-07-07T18:24:29.794Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/461325237357/clients/_:getWebAppConfig  
+ Tue Jul 10 2018 09:29:44 GMT-0700 (PDT)
+[debug] [2018-07-10T16:29:44.999Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/461325237357/clients/_:getWebAppConfig  
   
- Sat Jul 07 2018 11:24:29 GMT-0700 (PDT)
-[debug] [2018-07-07T18:24:30.291Z] <<< HTTP RESPONSE 200
-[debug] [2018-07-07T18:24:30.312Z] <<< HTTP RESPONSE 200
-[debug] [2018-07-07T18:24:30.312Z] Starting @google-cloud/functions-emulator
+ Tue Jul 10 2018 09:29:44 GMT-0700 (PDT)
+[debug] [2018-07-10T16:29:45.343Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T16:29:45.344Z] Starting @google-cloud/functions-emulator
+[debug] [2018-07-10T16:29:45.416Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
 
-[debug] [2018-07-07T18:24:32.407Z] Parsing function triggers
-[info] ✔  functions: api: http://localhost:5001/generic-specific/us-central1/api
-[info] [hosting] Rewriting /api/test/about to local function api
+[debug] [2018-07-10T16:29:47.418Z] Parsing function triggers
