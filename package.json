@@ -4,7 +4,7 @@
     "node": "6.11.5"
   },
   "version": "1.0.0",
-  "description": "A starter project using: React, scss, Express + Passport authentication + Mongoose DB, and webpack.",
+  "description": "A starter project using: React, Webpack, Firebase + an Express REST API on a Cloud Function.",
   "private": true,
   "scripts": {
     "lint": "eslint --ignore-path .gitignore client/**.jsx",
@@ -13,7 +13,7 @@
     "build": "webpack --config webpack.dist.js",
     "serve": "npm run build && NODE_ENV=development nodemon server/bin/www --harmony",
     "start": "npm run build && NODE_ENV=production node server/bin/www --harmony",
-    "deploy": "firebase deploy"
+    "deploy": "cd server && firebase deploy && cd .."
   },
   "keywords": [],
   "author": "Mike Abeln",

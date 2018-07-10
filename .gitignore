@@ -10,6 +10,7 @@ server/functions/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+server/firebase-debug.log
 
 # Misc
 .DS_Store
