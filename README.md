@@ -3,12 +3,14 @@
 A starter project for React using Webpack
 
 ## Software versions
-Node 8.9.1
+Node 6.11.5
 ESLint
 Yarn or npm
 
 ## Quick Start
 ```
+npm i -g firebase-tools && firebase login
+
 yarn && yarn dev
 ```
 
