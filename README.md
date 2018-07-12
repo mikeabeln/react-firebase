@@ -1,9 +1,9 @@
-# Webpack-React-Build
+# React Firebase Webpack
 
 A starter project for React using Webpack
 
 ## Software versions
-Node 6.11.5
+Node 6.11.5 (required by Firebase)
 ESLint
 Yarn
 Firebase Tools
@@ -18,14 +18,12 @@ Then:
 yarn && yarn dev
 ```
 
-## Setup
-Install dependencies:
+## Install dependencies
 ```
 yarn install
 ```
 
-## Development
-Start development server:
+## Start development server:
 ```
 yarn dev
 ```
@@ -46,18 +44,14 @@ firebase serve
 This will serve the production build at port 5000, note that firebase emulations have trouble with http requests from the production build, so send them from the webpack-dev-server proxied to the firebase emulation.
 
 
-## Build
-Create production build:
+## Create production build:
 ```
 yarn build
 ```
+The build directory is server/public
 
-## Production
-```
-yarn start or npm start
-```
 
-## Production
+## Deploy to Firebase
 ```
 yarn deploy
 ```
