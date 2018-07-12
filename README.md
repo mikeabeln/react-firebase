@@ -5,45 +5,60 @@ A starter project for React using Webpack
 ## Software versions
 Node 6.11.5
 ESLint
-Yarn or npm
+Yarn
+Firebase Tools
 
 ## Quick Start
+First:
 ```
 npm i -g firebase-tools && firebase login
-
+```
+Then:
+```
 yarn && yarn dev
 ```
 
 ## Setup
 Install dependencies:
 ```
-yarn or npm install
+yarn install
 ```
-(May need to install flexboxgrid before webpack to avoid dependency error)
-(Might also move to css grid implementation)
 
 ## Development
-Start development server, build project, and watch files:
+Start development server:
 ```
-yarn dev or npm run dev
+yarn dev
 ```
 With IP works across all network devices, for example:
 If my IP is 127.0.0.1
 Enter into the browser address field 127.0.0.1:9000
 
+To emulate your firebase backend, open a new terminal window and:
+```
+cd server
+```
+Then:
+```
+firebase serve
+```
+
+
+## Build
+Create production build:
+```
+yarn build
+```
 
 ## Production
-
-Set up a Mongo database, and grab the database's URI
-
-Add a config.json file in the root of the server directory with:
-```
-{
-  "mongoUri": "YOUR_MONGO_URI",
-}
-```
-then in your terminal:
-
 ```
 yarn start or npm start
 ```
+
+## Production
+```
+yarn deploy
+```
+
+## TODO
+CSS grid implementation
+CSS modules
