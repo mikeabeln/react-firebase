@@ -6,29 +6,31 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
-firebase.initializeApp(functions.config().firebase)
+const firebaseApp = firebase.initializeApp(functions.config().firebase)
 
-const app = express()
+console.log(firebaseApp.options_.projectId)
+
+const api = express()
 const router = require('./routes/index')()
-app.use(helmet())
+api.use(helmet())
 
-app.use(function (req, res, next) {
-    res.setHeader('X-Powered-By', 'Not Your App v6.6.6')
+api.use(function (req, res, next) {
+    res.setHeader('X-Powered-By', 'Not Your Api v6.6.6')
     next()
 })
 
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
+api.use(logger('dev'))
+api.use(bodyParser.json())
+api.use(bodyParser.urlencoded({ extended: false }))
+api.use(cookieParser())
 
-app.use('/api', router)
+api.use('/api', router)
 
 // error handling
-app.use((req, res, next) => {
+api.use((req, res, next) => {
     console.log('404 error - resource not found')
     res.status(404).redirect('/404')
     next()
 })
 
-exports.api = functions.https.onRequest(app)
+exports.api = functions.https.onRequest(api)
