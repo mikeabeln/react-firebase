@@ -8,11 +8,11 @@ class SignupPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstname: 'test',
-            lastname: 'user',
-            username: 'testuser',
-            password: 'testpassword',
-            email: 'test@testemail.com'
+            firstName: '',
+            lastName: '',
+            userName: '',
+            password: '',
+            email: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this)

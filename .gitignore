@@ -3,12 +3,13 @@
 # Dependencies
 node_modules/
 server/config.json
-server/.localhost-ssl/
+server/functions/node_modules/
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+server/firebase-debug.log
 
 # Misc
 .DS_Store

@@ -10,7 +10,7 @@ class Footer extends React.Component {
 
     render() {
         return (
-            <footer>
+            <footer className='footer'>
                 {/* put footer content here */}
                 <p>Footer</p>
             </footer>
