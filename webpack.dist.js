@@ -1,15 +1,21 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.config.js')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 
 module.exports = merge(common, {
     mode: 'production',
     module: {
         rules: [
             {
-                // bundle css+scss files to one extracted css file for production
                 test: /\.(css|scss)$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
             }
         ]
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'style.bundle.[contenthash].css'
+        })
+    ]
 })

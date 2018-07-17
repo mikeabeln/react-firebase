@@ -1,11 +1,11 @@
 # React Firebase Webpack
 
-A starter project for React using Webpack
+A starter project for Firebase using React and Webpack
 
 ## Software versions
-Node 6.11.5 (required by Firebase)
-ESLint
-Yarn
+Node 6.11.5 (required by Firebase)<br>
+ESLint<br>
+Yarn<br>
 Firebase Tools
 
 ## Quick Start
@@ -58,4 +58,3 @@ yarn deploy
 
 ## TODO
 CSS grid implementation
-CSS modules

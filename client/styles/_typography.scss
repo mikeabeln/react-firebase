@@ -1,14 +1,12 @@
 @font-face{
 	font-family: 'Gotham';
-	src: url('styles/fonts/Gotham-Book.otf');
+	src: url('./styles/fonts/Gotham-Book.otf');
 	font-weight: 400;
 	font-style: normal;
 }
 
-html{
-  font-size: 62.5%;
-  font-family: 'Gotham';
-  background-color: $gray-50;
+body{
+	font-family: 'Gotham';
 }
 
 p, a, span{

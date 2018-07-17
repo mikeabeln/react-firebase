@@ -35,22 +35,24 @@ module.exports = merge(common, {
             {
                 // bundle css+scss files to extracted css files for development
                 test: /\.(css|scss)$/,
-                use: ExtractTextPlugin.extract(
+                use: ['css-hot-loader'].concat(ExtractTextPlugin.extract(
                     {
+                        fallback: 'style-loader',
                         use: [
-                            { loader: 'style-loader' },
                             { loader: 'css-loader', options: { sourceMap: true } },
+                            { loader: 'postcss-loader' },
                             { loader: 'sass-loader', options: { sourceMap: true } }
                         ]
                     }
-                )
+                ))
             }
         ]
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: 'styles/[name].[hash].css',
-            disable: process.env.NODE_ENV !== 'production'
+            filename: './app.bundle.css',
+            disable: false,
+            allChunks: true
         }),
         new webpack.HotModuleReplacementPlugin()
     ]

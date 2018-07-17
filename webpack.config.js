@@ -7,7 +7,7 @@ module.exports = {
         app: './client/index.jsx'
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].bundle.[hash].js',
         path: path.resolve(__dirname, 'server/public')
     },
     module: {
@@ -41,7 +41,7 @@ module.exports = {
             	use: [{
                     loader: 'file-loader',
                     options: {
-                        outputPath: 'styles/fonts'
+                        outputPath: 'fonts'
                     }
                 }]
             },
@@ -61,9 +61,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './client/index.html',
             favicon: './client/favicon.ico',
-            inject: true
+            inject: true,
+            hash: true
         }),
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.NamedModulesPlugin()
     ]
 }

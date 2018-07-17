@@ -1,6 +1,14 @@
 @import './styles/_color.scss';
 @import './styles/_typography.scss';
 
+// Set REM to 10px
+html{
+  font-size: 62.5%;
+}
+
+body{
+	background-color: $gray-50;
+}
 
 
 
